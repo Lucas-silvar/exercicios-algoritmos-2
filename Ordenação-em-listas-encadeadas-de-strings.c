@@ -1,5 +1,13 @@
+/*Implemente um algoritmo de ordenação simples para ordenar uma lista encadeada de strings.
 
+Input Format
 
+Na primeira linha deve ser lida a quantidade de elementos que serão inseridos na lista encadeada. 
+A partir da segunda linha, ler as strings e colicá-las na lista encadeada.
+
+Para a implementação do exercício, utilize um TAD de listas encadeadas simples, podendo ser o código que foi apresentado em aula 
+(disponível no repositório da disciplina no GitHub).
+*/
 
 
 
