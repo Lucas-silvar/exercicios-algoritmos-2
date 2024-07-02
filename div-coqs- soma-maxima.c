@@ -1,0 +1,46 @@
+/*
+Dado um vetor de inteiros. Implemente uma função, utilizando divisão e conquista, que encontre a soma máxima no vetor.
+ Por exemplo: para o vetor v = {-1, 3, 0, -2, 1, 3, -4, 5}, a soma máxima é 12 (3 + 0 + 1 + 3 + 5).
+Input Format
+A primeira linha deve ser um número inteiro n referente ao tamanho do vetor. Em seguinda,
+Para cada uma das próximas n linhas devem ser lidos os elementos do vetor.
+Constraints
+Output Format
+Soma máxima dos elementos do vetor.
+*/
+
+#include <stdio.h>
+#include <limits.h>
+#include <stdlib.h>
+
+int somaMax(int v[], int ini, int fim) {
+    if (ini > fim)
+        return 0;
+
+    if (ini == fim){
+        if (v[ini] >= 0)
+            return v[ini];
+        else
+            return 0;
+    }
+
+    int m = (ini + fim) / 2;
+
+    return somaMax(v, ini, m) + somaMax(v, m + 1, fim);
+}
+
+int main(){
+    int n, *v;
+
+    scanf("%d", &n);
+
+    v = malloc(sizeof(int) * n);
+
+    for (int i = 0; i < n; i++)
+        scanf("%d", &v[i]);
+
+    printf("%d\n", somaMax(v, 0, n-1));
+
+    free(v);
+    return 0;
+}
